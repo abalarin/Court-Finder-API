@@ -22,7 +22,8 @@ def list_courts():
         "latitude": float(court.latitude),
         "longitude": float(court.longitude),
         "total_ratings": court.total_ratings,
-        "average_rating": court.average_rating
+        "average_rating": court.average_rating,
+        "image_urls": get_images(court.id)
     }
     for court in courts }
 
