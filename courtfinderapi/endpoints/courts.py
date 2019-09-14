@@ -1,8 +1,12 @@
 from flask import Blueprint, jsonify
+from flask_cors import CORS
+
 from courtfinderapi.app import session, client
 from courtfinderapi.models.courts import Court
 
 courts = Blueprint("courts", __name__)
+
+CORS(courts) # enable CORS on the courts blue print
 
 @courts.route("/courts", methods=["GET", "POST"])
 def list_courts():
