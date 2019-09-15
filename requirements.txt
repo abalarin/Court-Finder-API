@@ -3,3 +3,4 @@ SQLAlchemy
 mysqlclient
 boto3
 flask-cors
+passlib

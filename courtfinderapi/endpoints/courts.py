@@ -8,7 +8,7 @@ courts = Blueprint("courts", __name__)
 
 CORS(courts) # enable CORS on the courts blue print
 
-@courts.route("/courts", methods=["GET", "POST"])
+@courts.route("/courts", methods=["GET"])
 def list_courts():
     courts = session.query(Court).all()
     courts = { court.id : {
