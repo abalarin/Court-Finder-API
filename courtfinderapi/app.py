@@ -26,7 +26,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine(config.get('DB_URI'), echo=False)
+from sqlalchemy import exc
+from sqlalchemy import event
+from sqlalchemy import select
+
+engine = create_engine(config.get('DB_URI'), echo=False, pool_pre_ping=True)
 
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
